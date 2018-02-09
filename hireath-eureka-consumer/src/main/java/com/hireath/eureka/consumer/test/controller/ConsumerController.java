@@ -1,10 +1,11 @@
-package com.neo.controller;
+package com.hireath.eureka.consumer.test.controller;
 
-import com.neo.remote.HelloRemote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.hireath.eureka.consumer.test.remote.HelloRemote;
 
 @RestController
 public class ConsumerController {
@@ -14,8 +15,7 @@ public class ConsumerController {
 	
     @RequestMapping("/hello/{name}")
     public String index(@PathVariable("name") String name) {
-    	return "hello 啊"+name;
-//        return HelloRemote.hello(name);
+        return HelloRemote.hello(name);
     }
 
 }

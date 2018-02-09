@@ -1,4 +1,4 @@
-package com.neo.remote;
+package com.hireath.eureka.consumer.test.remote;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Service;

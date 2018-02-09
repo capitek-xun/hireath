@@ -20,6 +20,15 @@
 		<spring-cloud.version>Dalston.RELEASE</spring-cloud.version>
 	</properties>
 
+	<dependencies>
+		<!-- 热启动，热部署依赖包 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -40,6 +49,7 @@
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
+					<fork>true</fork>
 				</configuration>
 			</plugin>
 		</plugins>
