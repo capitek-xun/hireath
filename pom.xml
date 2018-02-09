@@ -58,5 +58,6 @@
 		<module>hireath-eureka-consumer</module>
 		<module>hiraeth-eureka-server</module>
 		<module>hireath-eureka-provider</module>
+		<module>hiraeth-hystrix-turbine</module>
 	</modules>
 </project>
