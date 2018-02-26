@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      name: hireath-config
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        serviceId: hireath-config-server
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: http://localhost:8000/eureka/
