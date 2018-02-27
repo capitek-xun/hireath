@@ -1,29 +1,45 @@
+---
 spring:
   application:
     name: hireath-eureka-server
----
-spring:
   profiles: peer1
 server:
   port: 8000
 eureka:
   instance:
-    hostname: localhost
+    hostname: peer1
   client:
     fetch-registry: false #如果为true，启动时报警.
     register-with-eureka: true #是否将自身注册
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8001/eureka/
+      defaultZone: http://peer2:8001/eureka/,http://peer3:8002/eureka/
 ---
 spring:
+  application:
+    name: hireath-eureka-server
   profiles: peer2
 server:
   port: 8001
 eureka:
   instance:
-    hostname: localhost
+    hostname: peer2
   client:
     fetch-registry: false #如果为true，启动时报警.
     register-with-eureka: true #是否将自身注册
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8000/eureka/
+      defaultZone: http://peer1:8000/eureka/,http://peer3:8002/eureka/
+---
+spring:
+  application:
+    name: hireath-eureka-server
+  profiles: peer3
+server:
+  port: 8002
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    fetch-registry: false #如果为true，启动时报警.
+    register-with-eureka: true #是否将自身注册
+    serviceUrl:
+      defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/
