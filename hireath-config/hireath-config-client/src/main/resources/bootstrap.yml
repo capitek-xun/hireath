@@ -1,12 +1,19 @@
 spring:
+  application:
+    name: hireath-config-client                  # 对应config server所获取的配置文件的{application}
   cloud:
     config:
       name: hireath-config
-      profile: dev
-      label: master
+      profile: dev                               # profile对应config server所获取的配置文件中的{profile} 
+      label: master                              # 指定Git仓库的分支，对应config server所获取的配置文件的{label}
       discovery:
-        enabled: true
-        serviceId: hireath-config-server
+        enabled: true                            # 启动服务发现的功能，开启了才能调用其它服务
+        serviceId: hireath-config-server         # 发现的服务的名字
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbit
+    password: rabbitpwd
 eureka:
   client:
     serviceUrl: 
