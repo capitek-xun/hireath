@@ -24,3 +24,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8000/eureka/           # 注册中心eurka地址
+management:
+  security:
+    enabled: false
