@@ -61,5 +61,6 @@
 		<module>hiraeth-hystrix-turbine</module>
 		<module>hireath-config/hireath-config-server</module>
 		<module>hireath-config/hireath-config-client</module>
+		<module>hireath-gateway-zuul</module>
 	</modules>
 </project>
