@@ -1,3 +1,5 @@
+server:
+  port: 8088
 spring:
   application:
     name: hireath-config-client                  # 对应config server所获取的配置文件的{application}
@@ -7,6 +9,7 @@ spring:
       name: hireath-config
       profile: dev                               # profile对应config server所获取的配置文件中的{profile} 
       label: master                              # 指定Git仓库的分支，对应config server所获取的配置文件的{label}
+      uri: http://localhost:8040/
       discovery:
         enabled: true                            # 启动服务发现的功能，开启了才能调用其它服务。默认false，设为true表示使用注册中心中的configserver配置而不自己配置configserver的uri
         serviceId: hireath-config-server         # 发现的服务的名字。指定config server在服务发现中的serviceId，默认为：configserver
@@ -19,3 +22,6 @@ eureka:
   client:
     serviceUrl: 
       defaultZone: http://localhost:8000/eureka/
+management:
+  security:
+    enabled: false
