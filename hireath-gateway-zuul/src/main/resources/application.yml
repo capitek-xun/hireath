@@ -7,7 +7,7 @@ zuul:
   routes:
     demo:
       path: /test/**
-      serviceId: spring-cloud-producer
+      serviceId: spring-cloud-producer #http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**会被转发到serviceId对应的微服务
 eureka: 
   client: 
     serviceUrl: 
